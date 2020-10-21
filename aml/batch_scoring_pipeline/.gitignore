@@ -1,0 +1,5 @@
+.ipynb_checkpoints/
+tmp/
+aml-compute-cer
+models/
+*.tar.gz
