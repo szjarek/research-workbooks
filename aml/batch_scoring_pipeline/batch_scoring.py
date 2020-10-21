@@ -35,6 +35,12 @@ def init():
     parser.add_argument('--model_name', dest="model_name", required=True)
     parser.add_argument('--labels_dir', dest="labels_dir", required=True)
     args, _ = parser.parse_known_args()
+    print("args:", args)
+    
+    dl_li = Run.get_context().input_datasets['labels_input']
+    dl_ii = Run.get_context().input_datasets['input_images']
+    print("li:", dl_li)
+    print("ii:", dl_ii)
 
     label_dict = get_class_label_dict(args.labels_dir)
     classes_num = len(label_dict)
@@ -71,6 +77,7 @@ def file_to_tensor(file_path):
 def run(mini_batch):
     result_list = []
     for file_path in mini_batch:
+        print("fp:", file_path)
         test_image = file_to_tensor(file_path)
         out = g_tf_sess.run(test_image)
         result = g_tf_sess.run(probabilities, feed_dict={input_images: [out]})
