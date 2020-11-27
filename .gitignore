@@ -1,3 +1,5 @@
 .ipynb_checkpoints
 aml/ds-classification
 azure-quickstart-templates
+MachineLearningNotebooks
+az-deep-batch-score
