@@ -1,0 +1,16 @@
+name: neuralmagic
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.8.3
+  - jupyter=1.0.0
+  - onnx=1.7.0
+  - numpy=1.19.1
+  - pandas=1.0.5
+  - tqdm=4.48.2
+  - pip
+  - pip:
+    - pillow==7.2.0
+    - sparseml
+    - deepsparse
